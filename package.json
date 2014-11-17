@@ -1,0 +1,16 @@
+{
+  "name": "Virtual-Badge",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.9.2",
+    "ejs": "*",
+    "express": "3.2.6",
+    "express-myconnection": "^1.0.4",
+    "express-session": "^1.9.1",
+    "mysql": "^2.5.3"
+  }
+}
