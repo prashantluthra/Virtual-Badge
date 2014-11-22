@@ -10,9 +10,9 @@ var webkit=false;
 var moz=false;
 var v=null;
 
-var imghtml='<div id="qrfile"><canvas id="out-canvas" width="320" height="240"></canvas>'+
-    '<div id="imghelp">drag and drop a QRCode here'+
-	'<br>or select a file'+
+var imghtml='<div id="qrfile"><canvas id="out-canvas" width="480" height="240"></canvas>'+
+    '<div id="imghelp">'+
+	'<br>select a file'+
 	'<input type="file" onchange="handleFiles(this.files)"/>'+
 	'</div>'+
 '</div>';
@@ -103,30 +103,41 @@ function htmlEntities(str) {
 
 function read(a)
 {
-    var html="<br>";
+	for(var p in navigator)
+	    x += p + '=' + navigator[p] + "\n";
+	//alert(x);
+	var hash = CryptoJS.SHA1(x);
+	
+    var html="";
     if(a.indexOf("http://") === 0 || a.indexOf("https://") === 0)
-        html+="<a target='_blank' href='"+a+"'>"+a+"</a><br>";
-    html+="<b>"+htmlEntities(a)+"</b><br><br>";
-//    var xmlhttp;
-//    if (window.XMLHttpRequest)
-//      {// code for IE7+, Firefox, Chrome, Opera, Safari
-//      xmlhttp=new XMLHttpRequest();
-//      }
-//    else
-//      {// code for IE6, IE5
-//      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-//      }
-//    xmlhttp.onreadystatechange=function()
-//      {
-//      if (xmlhttp.readyState==4 && xmlhttp.status==200)
-//        {
-//        document.getElementById("result").innerHTML=xmlhttp.responseText;
-//        }
-//      }
-//    xmlhttp.open("GET","Categories?action=home",true);
-//    xmlhttp.send(); 
+        html+="<a target='_blank' href='"+a+"'>"+a+"</a>";
+    html+=""+htmlEntities(a)+"";
+    var xmlhttp;
+    var x = '';
+    for(var p in navigator)
+        x += p + '=' + navigator[p] + "\n";
+    var hash = CryptoJS.SHA1(x);
+    if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+      }
+    else
+      {// code for IE6, IE5
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    xmlhttp.onreadystatechange=function()
+      {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+    	  alert(xmlhttp.responseText);
+    	  document.getElementById("result").innerHTML='<img src="/images/'+'size.png">';
+        }
+      }
     //alert(html);
-    document.getElementById("result").innerHTML=html;
+    xmlhttp.open("GET","verify/"+html+","+hash,true);
+    xmlhttp.send(); 
+    //alert(html);
+    //document.getElementById("result").innerHTML=html;
 }	
 
 function isCanvasSupported(){

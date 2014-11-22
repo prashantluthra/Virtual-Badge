@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta content="QR Code scanner" name="description">
+  <head>
+     <meta content="QR Code scanner" name="description">
     <meta content="qrcode,qr code,scanner,barcode,javascript" name="keywords">
     <meta content="English" name="language">
     <meta content="Lazar Laszlo (c) 2011" name="copyright">
     <meta content="1 Days" name="Revisit-After">
-    <meta content="index, follow" name="robots">
+    <meta cont	ent="index, follow" name="robots">
     <meta content="text/html; charset=utf-8" http-equiv="Content-type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
@@ -15,19 +15,13 @@
 body{
     width:100%;
     text-align:center;
-    /* background-repeat: no-repeat;
-    background-image: url("/images/it_security_services.jpg"); */
     }
     img{
     border:0;
     }
     #main{
     margin: 15px auto;
-    /* background:white; */
-    overflow: auto;
-    width: 100%;
-   /*  background-repeat: no-repeat; */
-    background-image: url("/images/Digital-security-access-denied-multi-coloured-locks.jpg");
+    /*background-image: url("/images/Digital-security-access-denied-multi-coloured-locks.jpg");*/
     }
     #header{
     background:white;
@@ -35,7 +29,7 @@ body{
     }
     #mainbody{
     background-repeat: no-repeat;
-    background-image: url("/images/security-access.jpg");
+    /*background-image: url("/images/security-access.jpg");*/
     /* background: white; */
     width:100%;
     /* display:none; */
@@ -45,14 +39,14 @@ body{
     }
     #v{
     width:320px;
-    height:240px;
+    height:235px;
     }
     #qr-canvas{
     display:none;
     }
     #qrfile{
     width:320px;
-    height:240px;
+    height:235px;
     }
     #mp1{
     text-align:center;
@@ -79,16 +73,16 @@ body{
     }
     #outdiv
     {
-    width:320px;
+    width:480px;
     height:240px;
     border: solid;
     border-width: 3px 3px 3px 3px;
     }
     #result{
-    border: solid;
+    border: 0px;
     border-width: 1px 1px 1px 1px;
     padding:20px;
-    width:70%;
+    width:100%;
     }
 
     ul{
@@ -113,7 +107,7 @@ body{
     .tsel{
     padding:0;
      background-repeat: no-repeat;
-    background-image: url("../images/security-access.jpg");
+    /*background-image: url("../images/security-access.jpg");*/
     }
 
     </style>
@@ -134,22 +128,46 @@ body{
     })();
 
     </script>
-</head>
+    <title>Mamba - Free Bootstrap 3 one page template</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- css -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/stylesheets/style.css" rel="stylesheet" media="screen">
+	<link href="/stylesheets/default.css" rel="stylesheet" media="screen">
+	<script src="/js/modernizr.custom.js"></script>
+      </head>
+  <body>
+	<div class="menu-area">
+			<div id="dl-menu" class="dl-menuwrapper">
+						<button class="dl-trigger">Open Menu</button>
+						<ul class="dl-menu">
+							<li>
+								<a href="/">Login</a>
+							</li>
+							
+						</ul>
+					</div><!-- /dl-menuwrapper -->
+	</div>	
 
-<body>
-    <div id="main">
-        <div id="mainbody">
-            <table border="0" class="tsel" width="25%" align="center">
-                <tr>
-                    <td align="center" valign="top" width="50%">
-                        <table border="0" class="tsel">
+	  <!-- intro area -->	  
+	  <div id="intro">
+	  
+			<div class=">
+				<div class="container">
+					<div class="row">
+					
+						
+					<div align="center">
+						<br><br><br><br><br><br>
+						<table border="0" class="tsel">
                             <tr>
                                 <td><img align="left" class="selector" id=
                                 "webcamimg" onclick="setwebcam()" src=
                                 "vid.png" alt="Scan"></td>
 
                                 <td><img align="right" class="selector" id=
-                                "qrimg" onclick="setimg()" src="cam.png"></td>
+                                "qrimg" onclick="setimg()"  alt="Upload" src="cam.png"></td>
                             </tr>
 
                             <tr>
@@ -157,24 +175,28 @@ body{
                                     <div id="outdiv"></div>
                                 </td>
                             </tr>
+                            <tr>
+	                    <td align="center" colspan="2">
+	                        <div id="result"></div>
+	                    </td>
+	                </tr>
                         </table>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td align="center" colspan="3"></td>
-                </tr>
-
-                <tr>
-                    <td align="center" colspan="3">
-                        <div id="result"></div>
-                    </td>
-                </tr>
-            </table>
-        </div><br>
-    </div><canvas height="600" id="qr-canvas" width="800"></canvas>
+					</div>
+					</div>
+				</div>
+		 	</div>
+			
+	 </div>
+	 <canvas height="600" id="qr-canvas" width="800"></canvas>
     <script type="text/javascript">
 load();
     </script>
-</body>
+	 <!-- js -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+	<script src="/js/jquery.smooth-scroll.min.js"></script>
+	<script src="/js/jquery.dlmenu.js"></script>
+	<script src="/js/wow.min.js"></script>
+	<script src="/js/custom.js"></script>
+  	
 </html>
